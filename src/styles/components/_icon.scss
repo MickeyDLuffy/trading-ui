@@ -1,0 +1,10 @@
+.fa-actions{
+  .fas, .far {
+    transition: .5s all ease-in-out;
+    &:hover {
+      transform: scale(1.5);
+      cursor: pointer;
+    }
+  }
+}
+

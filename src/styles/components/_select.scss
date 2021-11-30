@@ -1,0 +1,57 @@
+@import 'abstracts/colors';
+@import 'abstracts/type';
+.options-hover {
+  color: $white;
+  background-color: $accent;
+}
+
+::ng-deep
+.mat-select-panel
+.mat-option.mat-selected:not(.mat-option-multiple){
+  @extend .options-hover;
+}
+::ng-deep .mat-select-value {
+  color: $main;
+  text-transform: uppercase;
+  @include font(700, 1em, 'Montserrat');
+}
+.custom-select-option {
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  color: $main;
+  text-transform: uppercase;
+  @include font(700, 1em, 'Montserrat');
+  &:hover{
+    @extend .options-hover;
+  }
+}
+::ng-deep .mat-select-arrow-wrapper {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  margin: 0 10px;
+  background: url('/assets/img/select-down.svg') no-repeat;
+
+}
+mat-select.custom-select {
+  border-radius: 5px;
+  padding: 10px;
+  border: none;
+  background: $white;
+  color: $main!important;
+
+  &:focus {
+    border: 1px solid $accent;
+    outline: $accent;
+  }
+}
+.custom-select-container {
+  .custom-select {
+    width: 50%;
+  }
+  mat-label {
+    color: $main;
+    @include font(700, 1em, 'Montserrat');
+  }
+}

@@ -1,0 +1,46 @@
+@import 'layout/flex';
+@import 'abstracts/type';
+@import 'abstracts/colors';
+@import 'mixins/mixins';
+.stats-card {
+  width: clamp(13rem, 10vw + 1rem, 18rem);
+
+  display: flex;
+
+  padding: .5rem;
+  background: $white;
+
+
+  border-radius: 8px;
+
+  background: white;
+  height: 4rem;
+
+  @include box-shadow;
+  &__icon {
+   padding-right: 1rem;
+  }
+
+  &__content {
+   @include flex-column();
+   justify-content: flex-start; 
+   .detail {
+     display: grid;
+     grid-template-columns: 1fr;
+     padding-left: 1rem;
+     &__title {
+       color: $text-main-blue;
+       @include font(700, 1em, 'Lato');
+      
+     }
+     &__value {
+       color: $text-inverse;
+       @include font(400, 1em, 'Lato');
+     
+       @debug &;
+     }
+   }
+
+
+  }
+}

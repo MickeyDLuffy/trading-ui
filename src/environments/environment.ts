@@ -2,7 +2,13 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-export const environment = {
+import {IEnvironment} from "./ienvironment";
+const apiRoot = 'https://apis.panacare.co.ke/api/v1';
+const mainApiUrl = `${apiRoot}`;
+export const environment: IEnvironment  = {
+  baseUri: mainApiUrl,
+  enableDebugTools: false,
+  logLevel: 'debug',
   production: false
 };
 
