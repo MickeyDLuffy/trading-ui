@@ -11,25 +11,7 @@
     z-index: $index;
 }
 
-@mixin scroll-bar($background: $main) {
-    ::-webkit-scrollbar{
-        width: .6em;
-    }
-    ::-webkit-scrollbar-track{
-        @include box-shadow;
-    }
-    ::-webkit-scrollbar-thumb{
-        @include change-background($background);
-    }
-}
 
-@mixin absolute-center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    
-}
 
 
 
@@ -43,32 +25,5 @@
     background: $background;
 }
 
-
- @mixin h1-website-headers {
-    color: $accent;
-    @include font(700, 36, 'Montserrat');
-}
-
-@mixin nav-active {
-    border-left: 5px solid  $accent;
-    background: linear-gradient(
-                    270deg
-            , rgba(124, 52, 92, 0.1) -2.61%, rgba(124, 52, 92, 0) 100%);
-    color: $accent;
-}
-
-
-@mixin page-headers {
-    color: $main;
-    padding-bottom: $spacing-1rem;
-    @include font(700, 2.5em, 'Lato')
-}
-
-@mixin profile-card {
-    background: $white;
-    border: 1px solid rgba(63, 63, 68, 0.005);
-    box-shadow: 0 1px 0 rgba(63, 63, 68, 0.05), 0 1px 3px rgba(63, 63, 68, 0.15);
-    border-radius: 4px;
-}
 
 
