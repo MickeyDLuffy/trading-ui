@@ -10,7 +10,15 @@
     &__logo {
 
     }
-    &__auth-buttons {
+    &__auth-buttons { ::-webkit-scrollbar{
+      width: .6em;
+    }
+      ::-webkit-scrollbar-track{
+        @include box-shadow;
+      }
+      ::-webkit-scrollbar-thumb{
+        @include change-background($background);
+      }
       align-self: center;
     }
   }

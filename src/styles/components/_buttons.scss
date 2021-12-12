@@ -12,6 +12,7 @@
   @include box-shadow;
 
   &:hover {
+    transform: translateY(5px);
     //@include change-background($white);
     //@include change-color($accent);
     //transform: scale(1.1);

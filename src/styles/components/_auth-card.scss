@@ -1,0 +1,43 @@
+@import "abstracts/colors";
+@import "abstracts/type";
+@import "mixins/mixins";
+.auth-card {
+  @include change-background($white);
+  @include box-shadow;
+  border-radius: $border-radius;
+  display: grid;
+  place-content: center;
+  width: 70%;
+  .card-content {
+    &__header {
+      @include font(700);
+      text-align: center;
+      padding-block-end: $spacing-1rem;
+    }
+    &__inputs {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-row-gap: 1rem;
+      place-content: center;
+      input {
+        @include change-background($gray);
+        border: 1px solid gray;
+        padding: $spacing-half-rem;
+        border-radius: $border-radius;
+        padding-inline: $spacing-1rem;
+        &:focus-visible {
+          outline: none;
+          border: 2px solid $accent;
+        }
+      }
+      button {
+        @include font(400)
+      }
+      .sign-up-instead {
+        p {
+          @include font(600, .7rem);
+        }
+      }
+    }
+  }
+}

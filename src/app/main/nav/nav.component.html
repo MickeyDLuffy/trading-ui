@@ -3,9 +3,10 @@
       <div class="navigation__logo">
         <img src="assets/logo.svg" alt="red brokers logo">
       </div>
-      <div class="navigation__auth-buttons ">
-          <button class="auth-buttons auth-buttons--register">Sign Up</button>
-          <button class="auth-buttons auth-buttons--login">Login</button>
+      <div class="navigation__auth-buttons " [hidden]="hideAuthButtons">
+          <button class="auth-buttons auth-buttons--register"
+                  routerLink="/register">Sign Up</button>
+          <button class="auth-buttons  auth-buttons--login" routerLink="/login">Login</button>
       </div>
   </nav>
 </header>

@@ -45,10 +45,12 @@
           &__product-row {
            box-shadow: rgb(0 0 0 / 12%) 0 8px 24px;
            padding: $spacing-1rem;
-            cursor: pointer;
+           cursor: pointer;
+            transition: 1s box-shadow ease;
 
             &:hover {
               box-shadow: rgb(255, 255, 255) 0 8px 24px;
+              border: 1px solid red;
             }
             .stock {
               display: flex;

@@ -7,16 +7,22 @@ import {HTTP_INTERCEPTORS} from "@angular/common/http";
 import {HttpInterceptorService} from "../config/http-interceptor.service";
 import { PageNotFoundComponent } from './error-components/page-not-found/page-not-found.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { LoginComponent } from './security/login/login.component';
+import { RegisterComponent } from './security/register/register.component';
+import {SharedModule} from "./shared/shared.module";
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,
+    SharedModule,
   ],
   providers: [
     {
