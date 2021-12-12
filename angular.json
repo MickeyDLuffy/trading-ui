@@ -39,7 +39,8 @@
                 "src/styles"
               ]
             },
-            "scripts": []
+            "scripts": [],
+            "aot": true
           },
           "configurations": {
             "production": {
@@ -114,4 +115,5 @@
     }
   },
   "defaultProject": "air-view"
+
 }

@@ -1,18 +1,18 @@
-$main: #001B36;
+$main: linear-gradient(253.4deg, #EEE8E8 8.21%, #FBFAFA 88.27%);
 $secondary: #27AAE0;
-$light-secondary: #2596BE33;
-$light-grey: #E8E8E8;
-$facebook: #3B5998;
-$accent: #7C345C;
-$background: #F0F0F0;
+$accent: #AF2A2A;
+$background: linear-gradient(253.4deg, #EEE8E8 8.21%, #FBFAFA 88.27%);;
 $white: rgb(255, 255, 255);
-
+$black: #000000;
 
 // Spacing
 
 $spacing-main: 3rem;
 $spacing-1rem: 1rem;
+$spacing-half-rem: .5rem;
 
+//
+$border-radius: 50px;
 
 @mixin change-background($background: $main) {
     background: $background;

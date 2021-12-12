@@ -1,0 +1,17 @@
+@import "abstracts/colors";
+@import "components/buttons";
+.header {
+  //top: -1rem;
+  //position: sticky;
+  //z-index: 1;
+  margin-inline: $spacing-main;
+
+  .navigation {
+    &__logo {
+
+    }
+    &__auth-buttons {
+      align-self: center;
+    }
+  }
+}

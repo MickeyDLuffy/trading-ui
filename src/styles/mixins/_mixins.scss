@@ -1,18 +1,8 @@
 @import 'abstracts/colors';
 @import 'abstracts/type';
 @mixin box-shadow {
-    box-shadow: 0 12px 26px rgba(16, 30, 115, 0.06);
+  box-shadow: 2px 2px 4px rgba(129, 129, 129, 0.65);;
 }
-
-@mixin z-index($index: 10) {
-    @if $index  < 10 {
-        @error 'The default z-index is 10; #{$index} is less than 10: Kindly use a higher z-index  ';
-    }
-    z-index: $index;
-}
-
-
-
 
 
 @mixin underline($background: $accent) {

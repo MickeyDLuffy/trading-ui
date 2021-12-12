@@ -1,9 +1,9 @@
-$font-stack: 'Poppins', sans-serif;
+$font-stack: 'Montserrat', sans-serif;
+//$font-stack: 'Poppins', sans-serif;
 @import 'mixins/functions';
 //Font weights
 
 
-$border-radius: 8px;
 $font-light: 300;
 $font-normal: 400;
 $font-weight-600: 600;
@@ -11,20 +11,22 @@ $font-bold: 700;
 $font-black: 900;
 $font-size-default: 16;
 $font-size-24: 24;
+$font-size-50: 50;
 
 
 //Font mixin
 
 @mixin font($weight: $font-light, $size: $font-size-default, $family: $font-stack) {
 
-    @if (ends-with( #{$size}, 'em')) {
-        font-size: $size
-    } @else {
-        // default font s-ze is pizels. So no need to add unit
-        font-size: $size * 1px;
-    }
     font-family: $family;
     font-weight: $weight;
+
+  @if (ends-with( #{$size}, 'em')) {
+    font-size: $size
+  } @else {
+    // default font s-ze is pizels. So no need to add unit
+    font-size: $size * 1px;
+  }
 }
 
 @mixin font-bold {

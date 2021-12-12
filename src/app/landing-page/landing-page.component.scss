@@ -1,0 +1,81 @@
+@import "abstracts/colors";
+@import "abstracts/type";
+@import "components/buttons";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+.landing-page {
+  height: 100vh;
+  overflow: auto;
+  .main {
+    margin-block: 5rem;
+    margin-inline: 10rem;
+     .intro {
+       &__hero-text {
+         @include font($font-weight-600, $font-size-50, 'Montserrat');
+       }
+       &__message {
+         @include font($font-normal, $font-size-default, 'Montserrat');
+         margin-block:  $spacing-1rem;
+       }
+       &__register {
+         margin-block:  calc($spacing-1rem * 3);
+
+         .auth-buttons {
+           width: 25%;
+           padding-block: .8rem;
+           @include font(500);
+         }
+       }
+     }
+
+    .market-trends {
+      &__header {
+        @include font(500, 30);
+        margin-block-end: calc($spacing-1rem * 3);
+
+      }
+
+      .trends-table {
+        &__column-header, &__rows {
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+          padding-block-end: calc($spacing-1rem * 2);
+
+        }
+        .row-container {
+          &__product-row {
+           box-shadow: rgb(0 0 0 / 12%) 0 8px 24px;
+           padding: $spacing-1rem;
+            cursor: pointer;
+
+            &:hover {
+              box-shadow: rgb(255, 255, 255) 0 8px 24px;
+            }
+            .stock {
+              display: flex;
+              &__icon-container {
+                padding-right: $spacing-1rem;
+                img {
+                  width: 30px;
+                  height: 30px;
+                  border-radius: 50%;
+                }
+              }
+            }
+      }
+    }
+
+  }
+}
+}
+
+//  Scroll bar
+  &::-webkit-scrollbar{
+    width: .6em;
+  }
+  &::-webkit-scrollbar-track{
+    @include box-shadow;
+  }
+  &::-webkit-scrollbar-thumb{
+    @include change-background($accent);
+  }
+}
