@@ -1,0 +1,35 @@
+@import "abstracts/colors";
+@import "abstracts/type";
+.trends-table {
+  &__column-header, &__rows {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding-block-end: calc($spacing-1rem * 2);
+    @include font(500);
+  }
+  .row-container {
+    &__product-row {
+      box-shadow: rgb(0 0 0 / 12%) 0 8px 24px;
+      padding: $spacing-1rem;
+      cursor: pointer;
+      transition: 1s box-shadow ease;
+
+      &:hover {
+        box-shadow: rgb(255, 255, 255) 0 8px 24px;
+        border: 1px solid red;
+      }
+      .stock {
+        display: flex;
+        &__icon-container {
+          padding-right: $spacing-1rem;
+          img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+
+}

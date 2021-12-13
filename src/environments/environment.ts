@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 import {IEnvironment} from "./ienvironment";
-const apiRoot = 'client-servive-api/v1';
+const apiRoot = 'http://localhost:8080/api/v1';
 const mainApiUrl = `${apiRoot}`;
 export const environment: IEnvironment  = {
   baseUri: mainApiUrl,

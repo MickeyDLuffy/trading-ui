@@ -1,0 +1,21 @@
+@import "layout/page-layout";
+@import "abstracts/colors";
+@import "abstracts/type";
+@import "components/text-headers";
+@import "mixins/mixins";
+@import "components/auth-card";
+.dashboard  {
+  background: transparent;
+  .market-trends {
+    &__header {
+      @include font(500, 30);
+      margin-block-end: calc($spacing-1rem * 3);
+
+    }
+  }
+
+
+
+}
+
+

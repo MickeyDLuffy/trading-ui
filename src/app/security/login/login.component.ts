@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {LoginService} from "../login.service";
+import {catchError, tap} from "rxjs";
+import {Router} from "@angular/router";
+import {JwtTokenService} from "../jwt-token.service";
 
 @Component({
   selector: 'app-login',
@@ -19,24 +23,39 @@ export class LoginComponent implements OnInit {
       ])
     });
    isSubmitClicked = false;
+   isLoginSuccessful = false;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,
+              private router: Router,
+              private jwtService: JwtTokenService,
+              private loginService: LoginService) { }
 
   ngOnInit(): void {
+
+    if (!this.loginService.isTokenExpired()) {
+      this.router.navigate(['/site/welcome']);
+    }
   }
 
   get username() {
-    return this.loginForm.controls['username']
+    return this.loginForm.controls['username'];
   }
 
   get password() {
-    return this.loginForm.controls['password']
+    return this.loginForm.controls['password'];
   }
   onSubmit() {
     this.isSubmitClicked = true;
     if (!this.loginForm.valid) return;
-    this.loginForm.valueChanges.subscribe((va) => {
-       console.log(va);
-     })
+
+    this.loginService.login(this.loginForm.value)
+      .pipe(
+        tap(isLoggedIn => this.isLoginSuccessful = isLoggedIn),
+        // catchError(err => err)
+      )
+      .subscribe(isLoged => {
+        this.jwtService.setToken("isLoged")
+        this.isLoginSuccessful = isLoged;
+      })
   }
 }

@@ -39,7 +39,7 @@
           display: grid;
           grid-template-columns: repeat(5, 1fr);
           padding-block-end: calc($spacing-1rem * 2);
-
+          @include font(500);
         }
         .row-container {
           &__product-row {

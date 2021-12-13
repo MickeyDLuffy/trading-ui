@@ -1,0 +1,6 @@
+@import "abstracts/colors";
+@import "abstracts/type";
+.h2-headers {
+  @include font(500, 30);
+  margin-block-end: calc($spacing-1rem * 3);
+}
