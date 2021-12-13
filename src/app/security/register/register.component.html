@@ -1,1 +1,58 @@
-<p>register works!</p>
+<section class="register">
+  <app-nav [hideAuthButtons]="true"></app-nav>
+
+  <div class="register__main-page">
+    <div class="image">
+      <img src="assets/login-image.svg" alt="image to depict login">
+    </div>
+    <div class="login-card auth-card">
+      <div class="card-content">
+        <h2 class="card-content__header">Create an account</h2>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="card-content__inputs">
+          <div class="firstname  d-flex flex-column">
+            <input type="text" placeholder="firstname"
+                   formControlName="firstname">
+            <mat-error *ngIf="isSubmitClicked && registerForm.controls['firstname'].hasError('required')">
+              firstname is required
+            </mat-error>
+            <mat-error *ngIf=" registerForm.controls['firstname'].hasError('minlength')">
+              Require min-length of 3 characters
+            </mat-error>
+          </div>
+
+
+          <div class="lastname  d-flex flex-column">
+            <input type="text" placeholder="lastname" formControlName="lastname">
+            <mat-error *ngIf="isSubmitClicked && registerForm.controls['lastname'].hasError('required')">
+              lastname is required
+            </mat-error>
+          </div>
+
+          <div class="email  d-flex flex-column">
+            <input type="email" placeholder="email" formControlName="email">
+            <mat-error *ngIf="isSubmitClicked && registerForm.controls['email'].hasError('required')">
+              email is required
+            </mat-error>
+            <mat-error *ngIf="isSubmitClicked && registerForm.controls['email'].hasError('email')">
+              Invalid email format
+            </mat-error>
+          </div>
+
+          <div class="password d-flex flex-column">
+            <input type="password" placeholder="Password" formControlName="password">
+            <mat-error *ngIf="isSubmitClicked && registerForm.controls['password'].hasError('required')">
+              Password is required
+            </mat-error>
+          </div>
+
+
+          <button type="submit" class="auth-buttons auth-buttons--register">Sign In</button>
+          <div class="sign-up-instead">
+            <p>Already have a broker account? Awesome!! <a routerLink="/register">Sign in</a> instead</p>
+<!--            <p>By signing up, you’re agreeing to Red Brokers’ terms of use <a routerLink="/register">Sign up</a> instead</p>-->
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

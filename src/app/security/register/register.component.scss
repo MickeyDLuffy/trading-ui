@@ -1,0 +1,18 @@
+@import "abstracts/colors";
+@import "components/auth-card";
+@import "components/buttons";
+
+.register {
+  margin: auto;
+  &__header {
+
+  }
+  &__main-page{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: calc($spacing-1rem * 5);
+    margin-inline: calc($spacing-1rem * 10);
+    margin-block: calc($spacing-1rem * 5);
+
+  }
+}

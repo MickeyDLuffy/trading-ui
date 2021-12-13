@@ -10,6 +10,9 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { LoginComponent } from './security/login/login.component';
 import { RegisterComponent } from './security/register/register.component';
 import {SharedModule} from "./shared/shared.module";
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import {SharedModule} from "./shared/shared.module";
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,
+    ReactiveFormsModule,
     SharedModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [
     {

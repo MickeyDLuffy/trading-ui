@@ -1,23 +1,38 @@
 <section class="login">
-   <app-nav [hideAuthButtons]="true"></app-nav>
+  <app-nav [hideAuthButtons]="true"></app-nav>
 
   <div class="login__main-page">
-      <div class="image">
-        <img src="assets/login-image.svg" alt="image to depict login">
-      </div>
-      <div class="login-card auth-card">
-          <div class="card-content">
-             <h2 class="card-content__header">Account Login</h2>
-               <div class="card-content__inputs">
-                 <input type="text" placeholder="Username">
-                 <input type="password" placeholder="Password">
-                 <button class="auth-buttons auth-buttons--register">Sign In</button>
-                 <div class="sign-up-instead">
-                   <p>New to red brokers? <a routerLink="/register">Sign up</a> instead</p>
-                 </div>
-               </div>
+    <div class="image">
+      <img src="assets/login-image.svg" alt="image to depict login">
+    </div>
+    <div class="login-card auth-card">
+      <div class="card-content">
+        <h2 class="card-content__header">Account Login</h2>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="card-content__inputs">
+          <div class="username d-flex flex-column">
+            <input type="text" placeholder="Username" #usernameInput
+                   formControlName="username">
+            <mat-error *ngIf="isSubmitClicked && username.hasError('required')">
+              Username is required
+            </mat-error>
+            <mat-error *ngIf=" username.hasError('minlength')">
+              Require min-length of 3 characters {{usernameInput.onfocus}}s
+            </mat-error>
           </div>
+
+          <div class="password d-flex flex-column">
+            <input type="password" placeholder="Password" formControlName="password">
+            <mat-error *ngIf="isSubmitClicked && password.hasError('required')">
+              Password is required
+            </mat-error>
+          </div>
+          <button type="submit" class="auth-buttons auth-buttons--register">Sign In</button>
+          <div class="sign-up-instead">
+            <p>New to red brokers? <a routerLink="/register">Sign up</a> instead</p>
+          </div>
+        </form>
       </div>
-   </div>
+    </div>
+  </div>
 </section>
 
