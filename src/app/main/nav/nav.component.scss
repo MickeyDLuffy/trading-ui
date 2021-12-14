@@ -7,6 +7,16 @@
   margin-inline: $spacing-main;
 
   .navigation {
+    &__toggle-sidebar{
+      display: flex;
+      align-items: center;
+      i {
+
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+    }
     &__logo {
 
     }

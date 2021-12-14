@@ -1,0 +1,27 @@
+@import "components/porfolio-item";
+@import "components/text-headers";
+@import "layout/page-layout";
+.portfolios {
+
+  .add-portfolio {
+    font-size: 20px;
+    //transform: scale(1);
+    transition: 1s transform ease;
+    &:hover {
+      transform: scale(1.3);
+      cursor: pointer;
+    }
+  }
+
+
+  &__user-portfolios {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 5rem;
+
+    .portfolio-item {
+
+    }
+
+  }
+}

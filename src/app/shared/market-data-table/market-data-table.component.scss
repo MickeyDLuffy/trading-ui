@@ -18,18 +18,34 @@
         box-shadow: rgb(255, 255, 255) 0 8px 24px;
         border: 1px solid red;
       }
-      .stock {
-        display: flex;
-        &__icon-container {
-          padding-right: $spacing-1rem;
-          img {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-          }
+
+      .buy-sell-buttons {
+
+        button {
+          padding-inline: 1rem;
+          padding-block: 0.4rem;
+          background: $green;
+          border: unset;
+          border-radius: 4px;
+          color: $white;
+          cursor: pointer;
+          transition: all 80ms ease-in-out 0s;
         }
+
+
+  }
+  .stock {
+    display: flex;
+    &__icon-container {
+      padding-right: $spacing-1rem;
+      img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
       }
     }
   }
+}
+}
 
 }

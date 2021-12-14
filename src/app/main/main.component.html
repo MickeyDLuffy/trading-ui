@@ -1,7 +1,49 @@
-<mat-sidenav-container class="main-content" hasBackdrop="true">
-  <mat-sidenav mode="push" #sidenav position="end">
+<mat-sidenav-container class="main-content" hasBackdrop="true" (backdropClick)="isBackDropClicked()">
+  <mat-sidenav mode="over" #sidenav  position="end" [opened]="isOpened$ | async"
+               class="sidenav" role="navigation" >
 
+    <div class="sidebar-menu">
+      <div class="d-flex justify-content-between header">
+        <mat-nav-list class="sidebar-menu__heading" routerLinkActive="is-active"
+                      [routerLinkActiveOptions]="{exact: true}"  >
+          Heading
+        </mat-nav-list>
+        <i class="fas fa-times sidebar-menu__close" (click)="closeSideBar()"></i>
+      </div>
+
+      <div class="sidebar-menu-inner">
+
+        <mat-nav-list   routerLink="dashboard" routerLinkActive="is-active">
+          <mat-list-item>
+            <a class="dashboard">Dashboard</a>
+          </mat-list-item>
+        </mat-nav-list>
+
+        <mat-nav-list routerLink="portfolio" routerLinkActive="is-active">
+          <mat-list-item>
+            <a >Portfolio</a>
+          </mat-list-item>
+        </mat-nav-list>
+
+        <mat-nav-list routerLink="consultations" routerLinkActive="is-active">
+          <mat-list-item>
+            <a >Orders</a>
+          </mat-list-item>
+        </mat-nav-list>
+
+        <mat-nav-list class="designed-by" >
+          <mat-list-item>
+            <span class="log-out-text" >Log out</span>
+          </mat-list-item>
+        </mat-nav-list>
+
+      </div>
+    </div>
   </mat-sidenav>
+
+
+
+
   <mat-sidenav-content>
       <app-nav [hideAuthButtons]="true"></app-nav>
 

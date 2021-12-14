@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {HamburgerService} from "./hamburger.service";
 
 @Component({
   selector: 'app-nav',
@@ -8,9 +9,13 @@ import {Component, Input, OnInit} from '@angular/core';
 export class NavComponent implements OnInit {
 
   @Input() hideAuthButtons: Boolean = false;
-  constructor() { }
+  @Input() hideHamburger: Boolean = false;
+  constructor(private hamburgerService: HamburgerService) { }
 
   ngOnInit(): void {
   }
 
+  onHamburgerClicked() {
+     this.hamburgerService.toggleSidebar(true);
+  }
 }

@@ -12,4 +12,11 @@ export class MarketDataTableComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onBuy() {
+    console.log("Bought data")
+  }
+
+  rowCliked() {
+    console.log("row clickeed")
+  }
 }

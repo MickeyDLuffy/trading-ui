@@ -7,24 +7,13 @@
 @import "components/porfolio-item";
 .dashboard  {
   background: transparent;
-  margin-inline: 3rem;
+  margin-inline: 10rem;
+  margin-block:3rem;
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  //grid-template-columns: 3fr 1fr;
   overflow: unset;
   .main {
-    .portfolios {
 
-      &__user-portfolios {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 5rem;
-
-        .portfolio-item {
-
-      }
-
-      }
-    }
     .market-trends {
       &__header {
         @include font(500, 30);
