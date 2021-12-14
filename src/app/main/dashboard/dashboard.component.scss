@@ -4,15 +4,39 @@
 @import "components/text-headers";
 @import "mixins/mixins";
 @import "components/auth-card";
+@import "components/porfolio-item";
 .dashboard  {
   background: transparent;
-  .market-trends {
-    &__header {
-      @include font(500, 30);
-      margin-block-end: calc($spacing-1rem * 3);
+  margin-inline: 3rem;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  overflow: unset;
+  .main {
+    .portfolios {
 
+      &__user-portfolios {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 5rem;
+
+        .portfolio-item {
+
+      }
+
+      }
+    }
+    .market-trends {
+      &__header {
+        @include font(500, 30);
+        margin-block-end: calc($spacing-1rem * 3);
+
+      }
     }
   }
+  .wallet {
+
+  }
+
 
 
 

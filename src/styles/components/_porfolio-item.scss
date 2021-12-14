@@ -1,0 +1,48 @@
+@import "abstracts/colors";
+@import "abstracts/type";
+@import "mixins/mixins";
+.portfolio-item {
+  @include change-background($white);
+  @include box-shadow;
+  //border-radius: $border-radius;
+  //display: grid;
+  //place-content: center;
+  position: relative;
+  background: transparent;
+  &__header {
+    @include font(500, 18);
+    padding: $spacing-1rem;
+    border-bottom: 2px solid $gray;
+    display: flex;
+    justify-content: space-between;
+
+    .actions {
+      cursor: pointer;
+    }
+  }
+
+  &__content {
+    @include font();
+    display: grid;
+    place-items: center;
+    padding-block: 5rem;
+  }
+
+  &__asset-logos {
+    display: grid;
+    position: absolute;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    z-index: -1;
+    height: 100%;
+    img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      justify-self: center;
+    }
+    .netflix {
+      align-self: end;
+    }
+  }
+}

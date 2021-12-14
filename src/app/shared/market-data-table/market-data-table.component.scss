@@ -3,7 +3,7 @@
 .trends-table {
   &__column-header, &__rows {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     padding-block-end: calc($spacing-1rem * 2);
     @include font(500);
   }

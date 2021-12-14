@@ -1,16 +1,49 @@
 
 <section class="dashboard page-layout">
-   <div class="portfolios">
-     <h2 class="portfolios__header h2-headers">My Portfolios</h2>
-     <div class="user-portfolios">
+  <div class="main">
+    <div class="portfolios">
+      <h2 class="portfolios__header h2-headers">My Portfolios</h2>
+      <div class="portfolios__user-portfolios">
+        <div class="portfolio-item">
+          <h3 class="portfolio-item__header">Default
+            <div class="actions">
+              <i class="fas fa-pencil-alt" matTooltip="Change portfolio name"></i>
+            </div>
+          </h3>
+          <div class="portfolio-item__asset-logos">
+            <img src="assets/icons/apple.svg" alt="apple logo">
+            <img src="assets/icons/tesla.svg" alt="apple logo">
+            <img src="assets/icons/google.svg" alt="apple logo">
+            <img src="assets/icons/amazon.svg" alt="apple logo">
+            <img src="assets/icons/netflix.svg" class="netflix" alt="apple logo">
+            <img src="assets/icons/microsoft.svg" alt="apple logo">
+            <img src="assets/icons/ibm.svg" alt="apple logo">
+            <img src="assets/icons/oracle.svg" alt="apple logo">
+          </div>
+          <div class="portfolio-item__content">
+            <h1 class="asset-count">5 items</h1>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <h3 class="portfolio-item__header">Default</h3>
+          <div class="portfolio-item__content"></div>
+        </div>
+        <div class="portfolio-item">
+          <h3 class="portfolio-item__header">Default</h3>
+          <div class="portfolio-item__content"></div>
+        </div>
+      </div>
+    </div>
+    <div class="market-data">
+      <div class="market-trends mt-lg-5">
+        <h2 class="market-trends__header h2-headers">Market Trend</h2>
+        <app-market-data-table></app-market-data-table>
+      </div>
+    </div>
+  </div>
+  <aside class="wallet">
 
-     </div>
-   </div>
-   <div class="market-data">
-     <div class="market-trends mt-lg-5">
-       <h2 class="market-trends__header h2-headers">Market Trend</h2>
-       <app-market-data-table></app-market-data-table>
-     </div>
-   </div>
+  </aside>
+
 </section>
 
