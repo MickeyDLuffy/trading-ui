@@ -9,12 +9,13 @@ import {MainModalComponent} from "../main-modal/main-modal.component";
 })
 export class PortfolioComponent implements OnInit {
 
-  constructor(private dialog: MatDialog) { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
   openModal() {
+    console.log("launching modal...")
     this.dialog.open(MainModalComponent);
   }
 }

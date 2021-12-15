@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MatDialog} from "@angular/material/dialog";
+import {MatDialog, MatDialogRef} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-main-modal',
@@ -8,7 +8,7 @@ import {MatDialog} from "@angular/material/dialog";
 })
 export class MainModalComponent implements OnInit {
   title = "Create new Portfolio";
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialogRef: MatDialogRef<MainModalComponent>) { }
 
   ngOnInit(): void {
 

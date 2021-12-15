@@ -8,7 +8,7 @@ import {MatListModule} from "@angular/material/list";
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import {MatTooltipModule} from "@angular/material/tooltip";
 import { MainModalComponent } from './main-modal/main-modal.component';
-import {MatDialogModule} from "@angular/material/dialog";
+import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule, MatDialogRef} from "@angular/material/dialog";
 
 
 @NgModule({
@@ -26,6 +26,9 @@ import {MatDialogModule} from "@angular/material/dialog";
     MatTooltipModule,
     MatDialogModule,
   ],
-  entryComponents: [MainModalComponent]
+  entryComponents: [MainModalComponent],
+  providers: [
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
+  ]
 })
 export class MainModule { }
