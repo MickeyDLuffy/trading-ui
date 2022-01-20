@@ -9,7 +9,8 @@ import {EnvironmentService} from "../environment.service";
 })
 export class ClientServiceService {
   clientUrl = this.environmentService.baseUri + "/client";
-  constructor(private httpClient: HttpClient, private environmentService: EnvironmentService) { }
+  constructor(private httpClient: HttpClient,
+              private environmentService: EnvironmentService) { }
 
   getClients(): Observable<Client[]> {
     return this.httpClient.get<Client[]>(this.clientUrl);

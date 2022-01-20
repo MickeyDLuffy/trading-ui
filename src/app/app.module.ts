@@ -13,13 +13,15 @@ import {SharedModule} from "./shared/shared.module";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
+import {TrialComponent} from "./trial/trial.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    TrialComponent
   ],
   imports: [
     AppRoutingModule,
