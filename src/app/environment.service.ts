@@ -29,5 +29,8 @@ export class EnvironmentService implements IEnvironment {
     return environment.logLevel;
   }
 
+  ll() {
+    return 10;
+  }
 
 }
