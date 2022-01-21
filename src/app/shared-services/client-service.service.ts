@@ -19,4 +19,12 @@ export class ClientServiceService {
   getClientById(clientId: string): Observable<Client> {
     return this.httpClient.get<Client>(this.clientUrl + `/${clientId}`);
   }
+
+  saveClient(client: Client): Observable<Client> {
+    return this.httpClient.post<Client>(this.clientUrl, client);
+  }
+
+  update(clientId: string, changes: Partial<Client> ) {
+    return this.httpClient.put<Client>(`${this.clientUrl}/${clientId}`, changes);
+  }
 }

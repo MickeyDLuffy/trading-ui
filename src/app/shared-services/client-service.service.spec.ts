@@ -2,6 +2,7 @@ import {ClientServiceService} from "./client-service.service";
 import {TestBed} from "@angular/core/testing";
 import {HttpClientTestingModule, HttpTestingController} from "@angular/common/http/testing";
 import {EnvironmentService} from "../environment.service";
+import {Client} from "../model/Client";
 
 
 
@@ -76,4 +77,30 @@ describe('Client Service', () => {
 
   });
 
+  it('should update the client', () => {
+    const d: Partial<Client> = {
+      firstName: 'Hancock'
+    };
+    clientService.update('2', d)
+      .subscribe(client => {
+        expect(client).toBeTruthy();
+        expect(client.firstName).toEqual('Hancock');
+
+      });
+
+    const req = httpTestClient.expectOne(`${envSpy.baseUri}/client/2`);
+    expect(req.request.method).toBe('PUT');
+    expect(req.request.body.firstName).toEqual(d.firstName);
+
+    req.flush({
+      firstName: 'Hancock',
+      lastName: 'Empress',
+      password: 'p@2332',
+      email: 'd@lufy.com'
+    })
+  });
+
+  afterEach(() => {
+    httpTestClient.verify();
+  })
 });
